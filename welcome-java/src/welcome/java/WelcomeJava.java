@@ -17,6 +17,7 @@ public class WelcomeJava {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Welcome to Java!");
+        System.out.println("Welcome to Java 2 !");
     }
     
 }
