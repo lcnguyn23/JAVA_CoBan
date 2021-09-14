@@ -11,10 +11,10 @@ public class ComputeAndInterpretBMI {
 		int age = input.nextInt();
 
 		if (age >= 16) {
-			System.out.print("Enter weight: ");
+			System.out.print("Enter weight (kg): ");
 			double weight = input.nextDouble();
 
-			System.out.print("Enter height: ");
+			System.out.print("Enter height (m): ");
 			double height = input.nextDouble();
 
 			double bmi = weight / (height * height);
