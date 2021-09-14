@@ -9,6 +9,7 @@ public class PhuongTrinhBac1 {
 
 		System.out.print("Nhập số a = ");
 		int a = input.nextInt();
+
 		System.out.print("Nhập số b = ");
 		int b = input.nextInt();
 
