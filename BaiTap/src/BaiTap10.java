@@ -12,13 +12,15 @@ public class BaiTap10 {
 
 		System.out.print("Nhập username: ");
 		String u = input.nextLine();
+		u = u.replaceAll("\\s", "");
 		System.out.print("Nhập password: ");
 		String p = input.nextLine();
+		p = p.replaceAll("\\s", "");
 
 		if (u.equals(username) && p.equals(password)) {
-			System.out.print("Đã nhập đúng username và password " + "(" + username + ", " + password + ")");
+			System.out.print("\nĐã nhập đúng username và password " + "(" + username + ", " + password + ")");
 		} else {
-			System.out.print("Đã nhập sai username và password");
+			System.out.print("\nĐã nhập sai username và password");
 		}
 
 	}
