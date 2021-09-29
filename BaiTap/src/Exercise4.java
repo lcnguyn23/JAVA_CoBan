@@ -9,7 +9,7 @@ public class Exercise4 {
 		System.out.print("Enter number: ");
 		int num = input.nextInt();
 
-		int day = num % 7;
+		int day = num / 7;
 		switch (day) {
 		case 0:
 			System.out.print("Monday");
