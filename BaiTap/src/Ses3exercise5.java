@@ -15,16 +15,15 @@ public class Ses3exercise5 {
 		System.out.print("Enter seconds: ");
 		int second = input.nextInt();
 
-		double km = met / 1000;
-		double mile = met / 1609;
-		double time = (hour * 3600) + (minute * 60) + second;
-		double ms = met / time;
-		double kmh = km / (time / 60);
-		double mih = mile / (time / 60);
+		double s = (hour * 3600) + (minute * 60) + second;
+		double mps, kph, mph;
+		mps = met / s;
+		kph = (met / 1000.0) / (s / 3600.0);
+		mph = kph / 1.609;
 
-		System.out.print("Your speed in meters/second is " + (double) Math.round(ms * 10000000) / 10000000 + "\n");
-		System.out.print("Your speed in km/h is " + (double) Math.round(kmh * 10000000) / 10000000 + "\n");
-		System.out.print("Your speed in miles/h is " + (double) Math.round(mih * 10000000) / 10000000 + "\n");
+		System.out.println("Your speed in meters/second is " + mps);
+		System.out.println("Your speed in km/h is " + kph);
+		System.out.println("Your speed in miles/h is " + mph);
 	}
 
 }
