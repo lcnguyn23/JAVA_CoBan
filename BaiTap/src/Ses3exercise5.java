@@ -19,8 +19,8 @@ public class Ses3exercise5 {
 		double mile = met / 1609;
 		double time = (hour * 3600) + (minute * 60) + second;
 		double ms = met / time;
-		double kmh = km / time;
-		double mih = mile / time;
+		double kmh = km / (time / 60);
+		double mih = mile / (time / 60);
 
 		System.out.print("Your speed in meters/second is " + (double) Math.round(ms * 10000000) / 10000000 + "\n");
 		System.out.print("Your speed in km/h is " + (double) Math.round(kmh * 10000000) / 10000000 + "\n");
