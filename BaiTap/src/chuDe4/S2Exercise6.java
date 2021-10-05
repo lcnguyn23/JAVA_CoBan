@@ -4,6 +4,7 @@ public class S2Exercise6 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.print("Prime number have 5 digits: ");
 		for (int i = 10001; i < 99999; i += 2) {
 			if (primeNumber(i)) {
 				System.out.println(i);
