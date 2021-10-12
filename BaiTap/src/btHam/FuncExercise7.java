@@ -42,6 +42,7 @@ public class FuncExercise7 {
 		System.out.println("1 - Tiếp tục thực hiện\n2 - Kết thúc chương trình");
 		int d = input.nextInt();
 		if (d == 1) {
+			System.out.println("Tiếp tục thực hiện");
 			choseFunc();
 		} else {
 			System.out.print("Kết thúc chương trình");
