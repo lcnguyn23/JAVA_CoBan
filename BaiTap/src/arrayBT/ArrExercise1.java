@@ -31,10 +31,10 @@ public class ArrExercise1 {
 	}
 
 	public static void trungbinhcong(int[] array, int n) {
-		int avg = 0;
+		double avg = 0;
 		for (int i = 0; i < n; i++) {
 			avg += array[i];
 		}
-		System.out.print("\nTrung binh cong = " + avg);
+		System.out.print("\nTrung binh cong = " + avg / n);
 	}
 }
