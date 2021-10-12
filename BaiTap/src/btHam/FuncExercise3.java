@@ -21,6 +21,7 @@ public class FuncExercise3 {
 		}
 		for (int i = 0; i < n; i++) {
 			func();
+			// FuncExercise2.func();
 		}
 	}
 

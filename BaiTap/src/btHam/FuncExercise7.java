@@ -28,6 +28,7 @@ public class FuncExercise7 {
 			b = input.nextInt();
 
 			giaiptb1(a, b);
+			// FuncExercise4.giaiptb1(a, b);
 		} else {
 			System.out.print("Nhập số a = ");
 			a = input.nextInt();
@@ -37,6 +38,7 @@ public class FuncExercise7 {
 			c = input.nextInt();
 
 			giaiptb2(a, b, c);
+			// FuncExercise5.giaiptb2(a, b, c);
 		}
 
 		System.out.println("1 - Tiếp tục thực hiện\n2 - Kết thúc chương trình");

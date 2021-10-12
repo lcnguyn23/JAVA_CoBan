@@ -15,7 +15,7 @@ public class FuncExercise2 {
 		System.out.print("Enter string: ");
 		String str = input.nextLine();
 
-		System.out.print("Print string: " + str);
+		System.out.print("Print string: " + str + "\n");
 
 	}
 
