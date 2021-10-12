@@ -22,7 +22,7 @@ public class FuncExercise4 {
 		} else if (a == 0 && b != 0) {
 			System.out.print("Phương trình vô nghiệm");
 		} else if (a != 0) {
-			System.out.print("Phương trình có nghiệm duy nhất x = " + (-b / a));
+			System.out.print("Phương trình có nghiệm duy nhất x = " + ((float) (-b) / a));
 		}
 	}
 }
