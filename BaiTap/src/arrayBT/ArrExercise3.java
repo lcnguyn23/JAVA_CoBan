@@ -53,6 +53,6 @@ public class ArrExercise3 {
 			tbt += a[i] * b[i];
 		}
 
-		System.out.print("Trung bình trọng của 2 mảng là: " + tbt / n);
+		System.out.print("Trung bình trọng của 2 mảng là: " + (double) Math.round((tbt / n) * 100) / 100);
 	}
 }

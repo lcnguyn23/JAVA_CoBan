@@ -35,6 +35,6 @@ public class ArrExercise1 {
 		for (int i = 0; i < n; i++) {
 			avg += array[i];
 		}
-		System.out.print("\nTrung binh cong = " + avg / n);
+		System.out.print("\nTrung binh cong = " + (double) Math.round((avg / n) * 100) / 100);
 	}
 }
