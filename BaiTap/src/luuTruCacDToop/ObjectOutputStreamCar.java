@@ -20,9 +20,7 @@ public class ObjectOutputStreamCar {
 
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream("D:/carfile.txt"));
-
 			Car cars = new Car(name, engine, seats, production_date);
-
 			oos.writeObject(cars);
 			System.out.println("Thành công");
 		} catch (IOException ex) {

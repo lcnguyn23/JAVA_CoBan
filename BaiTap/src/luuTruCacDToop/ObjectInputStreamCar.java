@@ -10,9 +10,7 @@ public class ObjectInputStreamCar {
 
 		try {
 			ois = new ObjectInputStream(new FileInputStream("D:/carfile.txt"));
-
 			Car cars = (Car) ois.readObject();
-
 			System.out.println(cars.toString());
 		} catch (ClassNotFoundException ex) {
 			ex.printStackTrace();
