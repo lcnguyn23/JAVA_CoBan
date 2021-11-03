@@ -1,8 +1,12 @@
 package cacInterface;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Student implements Cloneable, Comparable<Student>, Serializable {
@@ -106,6 +110,7 @@ public class Student implements Cloneable, Comparable<Student>, Serializable {
 		s2.setGpa(3.0);
 		s2.setSocial_activities(5);
 		// Clone
+		System.out.print("Clone\n");
 		try {
 			Student s1 = (Student) s.clone();
 			System.out.println(s1.toString());
@@ -114,17 +119,40 @@ public class Student implements Cloneable, Comparable<Student>, Serializable {
 			System.out.println(s.toString());
 		}
 		// Compare
-		System.out.print(s.compareTo(s2));
+		System.out.print("Compare return: " + s.compareTo(s2) + "\n");
+		// Serializable
+		try {
+			FileOutputStream f = new FileOutputStream(new File("D:/studentinfor.txt"));
+			ObjectOutputStream o = new ObjectOutputStream(f);
 
-		try (FileInputStream fos = new FileInputStream("D:/studentinfor.txt");
-				ObjectInputStream oos = new ObjectInputStream(fos);) {
-			s = (Student) oos.readObject();
-			s2 = (Student) oos.readObject();
-		} catch (IOException i) {
-			i.printStackTrace();
+			// Write objects to file
+			o.writeObject(s);
+			o.writeObject(s2);
+
+			o.close();
+			f.close();
+
+			FileInputStream fi = new FileInputStream(new File("D:/studentinfor.txt"));
+			ObjectInputStream oi = new ObjectInputStream(fi);
+
+			// Read objects
+			Student st1 = (Student) oi.readObject();
+			Student st2 = (Student) oi.readObject();
+
+			System.out.println(st1.toString());
+			System.out.println(st2.toString());
+
+			oi.close();
+			fi.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+			System.out.println("Error initializing stream");
 		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.err.println(s.getFullname());
+
 	}
 }
