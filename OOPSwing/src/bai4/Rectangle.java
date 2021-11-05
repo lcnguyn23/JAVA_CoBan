@@ -1,6 +1,8 @@
 package bai4;
 
-public class Rectangle {
+import bai7.Shape;
+
+public class Rectangle extends Shape {
 	private int upper_x;
 	private int upper_y;
 	private int lower_x;
@@ -19,11 +21,13 @@ public class Rectangle {
 		this.lower_y = lower_y;
 	}
 
+	@Override
 	public double calcPerimeter() {
 		double result = 2 * Math.abs((upper_x - lower_x) + (upper_y - lower_y));
 		return result;
 	}
 
+	@Override
 	public double calcArea() {
 		return Math.abs((upper_x - lower_x) * (upper_y - lower_y));
 	}
@@ -58,6 +62,12 @@ public class Rectangle {
 
 	public void setLower_y(int lower_y) {
 		this.lower_y = lower_y;
+	}
+
+	@Override
+	public String toString() {
+		return "Rectangle [upper_x=" + upper_x + ", upper_y=" + upper_y + ", lower_x=" + lower_x + ", lower_y="
+				+ lower_y + ", calcPerimeter()=" + calcPerimeter() + ", calcArea()=" + calcArea() + "]";
 	}
 
 }

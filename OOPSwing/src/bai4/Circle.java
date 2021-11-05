@@ -1,6 +1,8 @@
 package bai4;
 
-public class Circle {
+import bai7.Shape;
+
+public class Circle extends Shape {
 	private int radius;
 	private int x, y;
 
@@ -16,14 +18,22 @@ public class Circle {
 		this.y = y;
 	}
 
+	@Override
 	public double calcPerimeter() {
 		double result = 2 * Math.PI * this.radius;
 		return result;
 	}
 
+	@Override
 	public double calcArea() {
 		double result = Math.PI * (Math.pow(radius, 2));
 		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Circle [radius=" + radius + ", x=" + x + ", y=" + y + ", calcPerimeter()=" + calcPerimeter()
+				+ ", calcArea()=" + calcArea() + "]";
 	}
 
 	public int getRadius() {
