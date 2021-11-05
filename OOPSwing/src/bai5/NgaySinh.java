@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
@@ -19,7 +19,6 @@ import com.toedter.calendar.JDateChooser;
 public class NgaySinh extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtKetQua;
 
 	/**
 	 * Launch the application.
@@ -57,6 +56,10 @@ public class NgaySinh extends JFrame {
 		dNgay.setBounds(94, 21, 174, 20);
 		contentPane.add(dNgay);
 
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(20, 57, 404, 193);
+		contentPane.add(textArea);
+
 		JButton btnNhap = new JButton("Nh\u00E2\u0323p");
 		btnNhap.addActionListener(new ActionListener() {
 			@Override
@@ -64,16 +67,10 @@ public class NgaySinh extends JFrame {
 				Date ngay = dNgay.getDate();
 				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
 				String output = df.format(ngay);
-				txtKetQua.setText(output);
+				textArea.append(output + "\n");
 			}
 		});
 		btnNhap.setBounds(306, 23, 89, 23);
 		contentPane.add(btnNhap);
-
-		txtKetQua = new JTextField();
-		txtKetQua.setBounds(10, 66, 414, 184);
-		contentPane.add(txtKetQua);
-		txtKetQua.setColumns(10);
-
 	}
 }
