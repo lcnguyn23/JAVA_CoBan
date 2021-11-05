@@ -43,4 +43,10 @@ public class Person {
 		this.ngaysinh = ngaysinh;
 	}
 
+	public double calcTax(double income) {
+		// TODO Auto-generated method stub
+		double tax = 0.02 * income;
+		return 0;
+	}
+
 }

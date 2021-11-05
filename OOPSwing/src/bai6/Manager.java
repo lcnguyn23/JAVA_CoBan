@@ -22,7 +22,8 @@ public class Manager {
 		s.setTruonghoc("HUSC");
 
 		System.out.println("Họ tên: " + s.getHoten() + "\nGiới tính: " + s.getGioitinh() + "\nNgày sinh: "
-				+ df.format(s.getNgaysinh()) + "\nTrường học: " + s.getTruonghoc() + "\n");
+				+ df.format(s.getNgaysinh()) + "\nTrường học: " + s.getTruonghoc());
+		System.out.println(s.calcTax(1200));
 
 		Worker w = new Worker();
 		w.setHoten("Nguyễn văn C");
@@ -31,7 +32,8 @@ public class Manager {
 		w.setCongty("FPT");
 
 		System.out.println("Họ tên: " + w.getHoten() + "\nGiới tính: " + w.getGioitinh() + "\nNgày sinh: "
-				+ df.format(w.getNgaysinh()) + "\nCông ty: " + w.getCongty() + "\n");
+				+ df.format(w.getNgaysinh()) + "\nCông ty: " + w.getCongty());
+		System.out.println(w.calcTax(1600));
 
 	}
 }

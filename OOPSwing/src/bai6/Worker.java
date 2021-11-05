@@ -2,7 +2,9 @@ package bai6;
 
 import java.util.Date;
 
-public class Worker extends Person {
+import bai8.TaxInterface;
+
+public class Worker extends Person implements TaxInterface {
 	private String congty;
 
 	public Worker() {
@@ -21,6 +23,13 @@ public class Worker extends Person {
 
 	public void setCongty(String congty) {
 		this.congty = congty;
+	}
+
+	@Override
+	public double calcTax(double income) {
+		// TODO Auto-generated method stub
+		double tax = 0.04 * income;
+		return tax;
 	}
 
 }
