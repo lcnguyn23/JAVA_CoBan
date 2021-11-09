@@ -49,4 +49,9 @@ public class Person {
 		return 0;
 	}
 
+	@Override
+	public String toString() {
+		return "Person [hoten=" + hoten + ", gioitinh=" + gioitinh + ", ngaysinh=" + ngaysinh + "]";
+	}
+
 }
