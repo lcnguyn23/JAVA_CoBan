@@ -1,11 +1,8 @@
 package btOOPKeThua;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
@@ -93,44 +90,6 @@ public class StudentManagent_2 {
 
 		ArrayList<Student_2> studentArrayList = new ArrayList<Student_2>();
 
-		try {
-			FileInputStream fis = new FileInputStream(fileName);
-			InputStreamReader isr = new InputStreamReader(fis);
-			BufferedReader bfr = new BufferedReader(isr);
-			String line = bfr.readLine();
-			while (line != null) {
-				String[] array = line.split(",");
-				if (array.length == 7) {
-					Student_2 s = new Student_2();
-					s.setStudentID(array[0]);
-					s.setName(array[1]);
-					s.setGender(array[2].charAt(0));
-					s.setBirth_year(Integer.parseInt(array[3]));
-					s.setAcademic_year(Integer.parseInt(array[4]));
-					s.setGpa(Float.parseFloat(array[5]));
-					s.setSocial_activities(Float.parseFloat(array[6]));
-					studentArrayList.add(s);
-				}
-
-				System.out.println("File " + fileName + " in ArrayList: \n");
-				for (int i = 0; i < studentArrayList.size(); i++) {
-					System.out.println("ID: " + studentArrayList.get(i).getStudentID());
-					System.out.println("Name: " + studentArrayList.get(i).getName());
-					System.out.println("Gender: " + studentArrayList.get(i).getGender());
-					System.out.println("Birth year: " + studentArrayList.get(i).getBirth_year());
-					System.out.println("Academic year: " + studentArrayList.get(i).getAcademic_year());
-					System.out.println("GPA: " + studentArrayList.get(i).getGpa());
-					System.out.println("Social Activities: " + studentArrayList.get(i).getSocial_activities());
-					System.out.println();
-				}
-				line = bfr.readLine();
-			}
-			fis.close();
-			isr.close();
-			bfr.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
 		sc.close();
 	}
 }
