@@ -37,16 +37,16 @@ public class StudentManagent_2 {
 		return fileName;
 	}
 
-	void inputStudentList(int size) {
-		studentList = new Student_2[size];
-		for (int i = 0; i < size; i++) {
+	void inputStudentList(int n) {
+		studentList = new Student_2[n];
+		for (int i = 0; i < n; i++) {
 			studentList[i] = new Student_2();
 			getStudentList()[i].inputStudent();
 			arr.add(studentList[i]);
 		}
 	}
 
-	void outputStudentList(int n) throws IOException {
+	void outputStudentList(int n) {
 		for (int i = 0; i < n; i++) {
 			getStudentList()[i].outputStudent();
 		}
@@ -69,7 +69,7 @@ public class StudentManagent_2 {
 		}
 	}
 
-	public void writeFiles(int size) {
+	public void writeFiles() {
 		File file = new File(fileName);
 		try {
 			FileOutputStream outputStream = new FileOutputStream(file);
@@ -85,13 +85,13 @@ public class StudentManagent_2 {
 
 	}
 
-	public ArrayList<Student_2> readFiles(int size) {
+	public ArrayList<Student_2> readFiles(int n) {
 		ArrayList<Student_2> studentList = new ArrayList<Student_2>();
 		try {
 			FileInputStream f = new FileInputStream(fileName);
 			ObjectInputStream o = new ObjectInputStream(f);
-			Student_2[] students = new Student_2[size];
-			for (int i = 0; i < size; i++) {
+			Student_2[] students = new Student_2[n];
+			for (int i = 0; i < n; i++) {
 				students[i] = (Student_2) o.readObject();
 				studentList.add(students[i]);
 			}
@@ -120,7 +120,7 @@ public class StudentManagent_2 {
 		sm.outputStudentList(n);
 		// System.out.println("")
 		sm.sort_Student();
-		sm.writeFiles(n);
+		sm.writeFiles();
 		System.out.println("Read files to array list: ");
 		ArrayList<Student_2> studentArrayList = sm.readFiles(n);
 		for (int i = 0; i < studentArrayList.size(); i++) {
