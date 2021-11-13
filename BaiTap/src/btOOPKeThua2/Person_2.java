@@ -1,4 +1,4 @@
-package btOOPKeThua;
+package btOOPKeThua2;
 
 import java.io.Serializable;
 import java.util.Scanner;
@@ -66,7 +66,13 @@ public class Person_2 implements Cloneable, Comparable<Person_2>, Serializable {
 	@Override
 	public int compareTo(Person_2 o) {
 		// TODO Auto-generated method stub
-		return 0;
+		if (birth_year == o.birth_year) {
+			return 0;
+		} else if (birth_year > o.birth_year) {
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 
 	void inputPerson() {
@@ -83,6 +89,11 @@ public class Person_2 implements Cloneable, Comparable<Person_2>, Serializable {
 		System.out.println("Name: " + getName());
 		System.out.println("Gender: " + getGender());
 		System.out.println("Birth year: " + getBirth_year());
+	}
+
+	public int compareTo(Student_2 s) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

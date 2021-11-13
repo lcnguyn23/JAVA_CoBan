@@ -1,4 +1,4 @@
-package btOOPKeThua;
+package btOOPKeThua2;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,7 +47,6 @@ public class StudentManagent_2 {
 	}
 
 	void outputStudentList(int n) throws IOException {
-		// inputStudentList(n);
 		for (int i = 0; i < n; i++) {
 			getStudentList()[i].outputStudent();
 		}

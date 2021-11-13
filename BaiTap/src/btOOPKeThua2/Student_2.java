@@ -1,4 +1,4 @@
-package btOOPKeThua;
+package btOOPKeThua2;
 
 import java.util.Scanner;
 
@@ -66,6 +66,24 @@ public class Student_2 extends Person_2 {
 	public String toString() {
 		return "Student_2 [studentID=" + studentID + ", academic_year=" + academic_year + ", gpa=" + gpa
 				+ ", social_activities=" + social_activities + "]";
+	}
+
+	@Override
+	public int compareTo(Person_2 o) {
+		// TODO Auto-generated method stub
+		return super.compareTo(o);
+	}
+
+	@Override
+	public int compareTo(Student_2 s) {
+		// TODO Auto-generated method stub
+		if (gpa == s.gpa || social_activities == s.social_activities) {
+			return 0;
+		} else if (gpa > s.gpa || (gpa == s.gpa && social_activities > s.social_activities)) {
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 
 	void inputStudent() {

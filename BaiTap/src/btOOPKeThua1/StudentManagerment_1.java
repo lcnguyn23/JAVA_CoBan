@@ -1,4 +1,4 @@
-package btKeThua1;
+package btOOPKeThua1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
