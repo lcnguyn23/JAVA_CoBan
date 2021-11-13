@@ -76,7 +76,6 @@ public class StudentManagent_2 {
 			@SuppressWarnings("resource")
 			ObjectOutputStream oos = new ObjectOutputStream(outputStream);
 			for (int i = 0; i < studentList.length; i++) {
-				getStudentList()[i].outputStudent();
 				oos.writeObject(getStudentList()[i]);
 			}
 			oos.flush();
@@ -117,7 +116,9 @@ public class StudentManagent_2 {
 		System.out.print("Enter numbers of student: ");
 		int n = sc.nextInt();
 		sm.inputStudentList(n);
+		System.out.println("Information of student: ");
 		sm.outputStudentList(n);
+		// System.out.println("")
 		sm.sort_Student();
 		sm.writeFiles(n);
 		System.out.println("Read files to array list: ");
