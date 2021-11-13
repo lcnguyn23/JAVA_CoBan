@@ -1,4 +1,4 @@
-package btOOPKeThua;
+package btKeThua1;
 
 import java.util.Scanner;
 
@@ -43,11 +43,6 @@ public class Person_1 {
 		this.birth_year = birth_year;
 	}
 
-	@Override
-	public String toString() {
-		return "Person_1 [name=" + name + ", gender=" + gender + ", birth_year=" + birth_year + "]";
-	}
-
 	void inputPerson() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("name= ");
@@ -62,5 +57,10 @@ public class Person_1 {
 		System.out.println("Name: " + getName());
 		System.out.println("Gender: " + getGender());
 		System.out.println("Birth year: " + getBirth_year());
+	}
+
+	@Override
+	public String toString() {
+		return "Person_1 [name=" + name + ", gender=" + gender + ", birth_year=" + birth_year + "]";
 	}
 }

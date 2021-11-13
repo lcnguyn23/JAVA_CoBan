@@ -64,8 +64,8 @@ public class Student_2 extends Person_2 {
 
 	@Override
 	public String toString() {
-		return studentID + "," + getName() + "," + getGender() + "," + getBirth_year() + "," + academic_year + "," + gpa
-				+ "," + social_activities;
+		return "Student_2 [studentID=" + studentID + ", academic_year=" + academic_year + ", gpa=" + gpa
+				+ ", social_activities=" + social_activities + "]";
 	}
 
 	void inputStudent() {

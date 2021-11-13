@@ -3,7 +3,7 @@ package btOOPKeThua;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class Person_2 implements Cloneable, Comparable<Student_2>, Serializable {
+public class Person_2 implements Cloneable, Comparable<Person_2>, Serializable {
 	/**
 	 * 
 	 */
@@ -64,7 +64,7 @@ public class Person_2 implements Cloneable, Comparable<Student_2>, Serializable 
 	}
 
 	@Override
-	public int compareTo(Student_2 o) {
+	public int compareTo(Person_2 o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

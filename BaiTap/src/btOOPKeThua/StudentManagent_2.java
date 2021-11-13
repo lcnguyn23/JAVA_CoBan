@@ -1,10 +1,11 @@
 package btOOPKeThua;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 public class StudentManagent_2 {
 	private Student_2 studentList[];
 	private final static String fileName = "D:\\StudentManagement.txt";
+	static ArrayList<Student_2> arr = new ArrayList<Student_2>();
 
 	public StudentManagent_2() {
 		super();
@@ -35,31 +37,20 @@ public class StudentManagent_2 {
 		return fileName;
 	}
 
-	@Override
-	public String toString() {
-		return "StudentManagent_2 [studentList=" + Arrays.toString(studentList) + "]";
-	}
-
-	void input(int size) {
+	void inputStudentList(int size) {
 		studentList = new Student_2[size];
 		for (int i = 0; i < size; i++) {
 			studentList[i] = new Student_2();
 			getStudentList()[i].inputStudent();
+			arr.add(studentList[i]);
 		}
 	}
 
-	void output(int size) throws IOException {
-		input(size);
-		File file = new File(fileName);
-		OutputStream outputStream = new FileOutputStream(file);
-		OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-		for (int i = 0; i < studentList.length; i++) {
+	void outputStudentList(int n) throws IOException {
+		// inputStudentList(n);
+		for (int i = 0; i < n; i++) {
 			getStudentList()[i].outputStudent();
-			String data = getStudentList()[i].toString();
-			outputStreamWriter.write(data);
-			outputStreamWriter.write("\n");
 		}
-		outputStreamWriter.flush();
 	}
 
 	void sort_Student() throws CloneNotSupportedException {
@@ -79,17 +70,62 @@ public class StudentManagent_2 {
 		}
 	}
 
+	public void writeFiles(int size) {
+		File file = new File(fileName);
+		try {
+			FileOutputStream outputStream = new FileOutputStream(file);
+			@SuppressWarnings("resource")
+			ObjectOutputStream oos = new ObjectOutputStream(outputStream);
+			for (int i = 0; i < studentList.length; i++) {
+				getStudentList()[i].outputStudent();
+				oos.writeObject(getStudentList()[i]);
+			}
+			oos.flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public ArrayList<Student_2> readFiles(int size) {
+		ArrayList<Student_2> studentList = new ArrayList<Student_2>();
+		try {
+			FileInputStream f = new FileInputStream(fileName);
+			ObjectInputStream o = new ObjectInputStream(f);
+			Student_2[] students = new Student_2[size];
+			for (int i = 0; i < size; i++) {
+				students[i] = (Student_2) o.readObject();
+				studentList.add(students[i]);
+			}
+			o.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return studentList;
+
+	}
+
+	@Override
+	public String toString() {
+		return "StudentManagent_2 [studentList=" + Arrays.toString(studentList) + "]";
+	}
+
 	public static void main(String[] args) throws CloneNotSupportedException, IOException {
 		// TODO Auto-generated method stub
 		StudentManagent_2 sm = new StudentManagent_2();
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter numbers of student: ");
 		int n = sc.nextInt();
-		sm.output(n);
+		sm.inputStudentList(n);
+		sm.outputStudentList(n);
 		sm.sort_Student();
-
-		ArrayList<Student_2> studentArrayList = new ArrayList<Student_2>();
-
+		sm.writeFiles(n);
+		System.out.println("Read files to array list: ");
+		ArrayList<Student_2> studentArrayList = sm.readFiles(n);
+		for (int i = 0; i < studentArrayList.size(); i++) {
+			System.out.println(studentArrayList.get(i));
+		}
 		sc.close();
 	}
 }
