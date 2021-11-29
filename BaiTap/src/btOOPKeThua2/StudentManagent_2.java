@@ -118,7 +118,6 @@ public class StudentManagent_2 {
 		sm.inputStudentList(n);
 		System.out.println("Information of student: ");
 		sm.outputStudentList(n);
-		// System.out.println("")
 		sm.sort_Student();
 		sm.writeFiles();
 		System.out.println("Read files to array list: ");
